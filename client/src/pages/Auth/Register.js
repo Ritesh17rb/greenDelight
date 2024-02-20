@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import axios from 'axios'
-import { useNavigate } from "react-router-dom";
-import Layout from '../../components/Layout/Layout';
-import toast from 'react-hot-toast';
-
-
+import React, { useState } from "react";
+import Layout from "./../../components/Layout/Layout";
+import axios from "axios";
+import { useNavigate, Link } from "react-router-dom";
+import toast from "react-hot-toast";
+import "../../styles/AuthStyles.css";
 
 const Register = () => {
     const [name, setName] = useState("");
@@ -12,90 +11,106 @@ const Register = () => {
     const [password, setPassword] = useState("");
     const [phone, setPhone] = useState("");
     const [address, setAddress] = useState("");
-
     const navigate = useNavigate();
 
-
-    // Form function
+    // form function
     const handleSubmit = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
         try {
-            const res = await axios.post('/api/v1/auth/register',
-                { name, email, password, phone, address });
-
+            const res = await axios.post("/api/v1/auth/register", {
+                name,
+                email,
+                password,
+                phone,
+                address,
+            });
             if (res && res.data.success) {
-                toast.success(res.data && res.data.message)
-                navigate('/login');
+                toast.success(res.data && res.data.message);
+                navigate("/login");
             } else {
-                toast.error(res.data.message)
+                toast.error(res.data.message);
             }
-
         } catch (error) {
-            console.log(error)
-            toast.error('Error: Please fill all fields!')
+            console.log(error);
+            toast.error("Something went wrong");
         }
-    }
+    };
 
     return (
-        <Layout title={'Register Yourself'}>
-            <div className="register">
-                <h1>Register Page</h1>
+        <Layout title="Register - Ecommerce App">
+            <div className="form-container ">
                 <form onSubmit={handleSubmit}>
-                    <div className="form-group">
-                        <label htmlFor="exampleInputName">Name <span style={{ color: 'red' }}>*</span></label>
-                        <input type="text"
+                    <h4 className="title">REGISTER FORM</h4>
+                    <div className="mb-3">
+                        <label htmlFor="name"><strong>Name</strong> <span className="required">*</span></label>
+                        <input
+                            type="text"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             className="form-control"
-                            id="exampleInputName"
-                            placeholder="Enter Name"
-                            required />
+                            id="name"
+                            placeholder="Enter Your Name"
+                            required
+                            autoFocus
+                        />
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="exampleInputEmail">Email <span style={{ color: 'red' }}>*</span></label>
-                        <input type="email"
+                    <div className="mb-3">
+                        <label htmlFor="email"><strong>Email</strong> <span className="required">*</span></label>
+                        <input
+                            type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             className="form-control"
-                            id="exampleInputEmail"
-                            placeholder="Enter Email"
-                            required />
+                            id="email"
+                            placeholder="Enter Your Email"
+                            required
+                        />
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="exampleInputPassword1">Password <span style={{ color: 'red' }}>*</span></label>
-                        <input type="password"
+                    <div className="mb-3">
+                        <label htmlFor="password"><strong>Password</strong> <span className="required">*</span></label>
+                        <input
+                            type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             className="form-control"
-                            id="exampleInputPassword1"
-                            placeholder="Password"
-                            required />
+                            id="password"
+                            placeholder="Enter Your Password"
+                            required
+                        />
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="exampleInputPhone">Phone <span style={{ color: 'red' }}>*</span></label>
-                        <input type="text"
+                    <div className="mb-3">
+                        <label htmlFor="phone"><strong>Phone</strong><span className="required">*</span></label>
+                        <input
+                            type="text"
                             value={phone}
                             onChange={(e) => setPhone(e.target.value)}
                             className="form-control"
-                            id="exampleInputPhone"
-                            placeholder="Enter Phone"
-                            required />
+                            id="phone"
+                            placeholder="Enter Your Phone"
+                        />
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="exampleInputAddress">Address <span style={{ color: 'red' }}>*</span></label>
-                        <input type="text"
+                    <div className="mb-3">
+                        <label htmlFor="address"><strong>Address</strong><span className="required">*</span></label>
+                        <input
+                            type="text"
                             value={address}
                             onChange={(e) => setAddress(e.target.value)}
                             className="form-control"
-                            id="exampleInputAddress"
-                            placeholder="Enter Address"
-                            required />
+                            id="address"
+                            placeholder="Enter Your Address"
+                        />
                     </div>
-                    <button type="submit" className="btn btn-info my-4">Submit</button>
+                    <button type="submit" className="btn btn-primary">
+                        REGISTER
+                    </button>
+                    <div className="links">
+                        <p>Already have an account? <Link to="/login">Sign in</Link></p>
+                        <p>By registering, you agree to our <Link to="/policy">Privacy Policy</Link>.</p>
+                    </div>
                 </form>
             </div>
         </Layout>
     );
-}
+};
 
 export default Register;
