@@ -14,12 +14,17 @@ const About = () => {
                 </div>
                 <div className="col-md-4">
                     <p className="text-justify mt-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                        officiis obcaecati esse tempore unde ratione, eveniet mollitia,
-                        perferendis eius temporibus dicta blanditiis doloremque explicabo
-                        quasi sunt vero optio cum aperiam vel consectetur! Laborum enim
-                        accusantium atque, excepturi sapiente amet! Tenetur ducimus aut
-                        commodi illum quidem neque tempora nam.
+                        <h2 >Welcome to Green Delight</h2>
+                        <p >
+                            Green Delight is your ultimate destination for high-quality organic farm products. We are committed to providing you with the freshest and most nutritious produce directly from our partner farms.
+                        </p>
+                        <p >
+                            Our mission is to promote sustainable agriculture and support local farmers while offering you a convenient way to access healthy and environmentally friendly products.
+                        </p>
+                        <p>
+                            We are a team of passionate individuals who have come together with the vision of creating a green environment for Consumers and Farmers
+                            Whether you're passionate about organic food or looking to make healthier choices for yourself and your family, Green Delight is here to cater to all your needs. Join us in our journey towards a greener and healthier future!
+                        </p>
                     </p>
                 </div>
             </div>

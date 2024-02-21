@@ -27,6 +27,7 @@
 
 .active {
   border-bottom: 2px solid black;
+
 }
 
 .navbar-brand {
@@ -110,4 +111,22 @@
   justify-content: center;
   height: 70vh;
   flex-direction: column;
+}
+
+
+/* I ADDED SOME EXTRA FOR ANIMATION */
+
+/* Add styles for the active NavLink */
+.active {
+  border-bottom: 2px solid black;
+  background-color: #f0f0f0;
+  /* Background color for the active NavLink */
+}
+
+/* Add hover effect */
+.nav-link:hover {
+  background-color: #f0f0f0;
+  /* Background color on hover */
+  color: #555;
+  /* Change text color on hover */
 }
