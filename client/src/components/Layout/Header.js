@@ -6,6 +6,8 @@ import toast from "react-hot-toast";
 const Header = () => {
     const [auth, setAuth] = useAuth();
 
+
+
     const handleLogout = () => {
         setAuth({
             user: null,
@@ -21,6 +23,7 @@ const Header = () => {
     }, [auth]);
 
     return (
+
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
                 <button
