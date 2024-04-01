@@ -4,8 +4,10 @@ import Layout from "./../components/Layout/Layout";
 import axios from "axios";
 import { Checkbox, Radio } from "antd";
 import { Prices } from "../components/Prices";
+import { useNavigate } from 'react-router-dom'
 
 const HomePage = () => {
+    const navigate = useNavigate();
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
     const [checked, setChecked] = useState([]);
@@ -151,6 +153,7 @@ const HomePage = () => {
                                         className="card-img-top"
                                         alt={p.name}
                                         style={{ height: "200px" }} // Fixed image height
+                                        onClick={() => navigate(`/product/${p.slug}`)}
                                     />
                                     <div className="card-body">
                                         <h5 className="card-title">{p.name}</h5>
@@ -159,7 +162,11 @@ const HomePage = () => {
                                         </p>
                                         <p className="card-text"> ₹ {p.price}</p>
                                         <div className="d-flex justify-content-between align-items-center">
-                                            <button className="btn btn-primary" style={{ transition: "transform 0.3s", marginRight: "8px" }}>More Details</button>
+                                            <button className="btn btn-primary" style={{ transition: "transform 0.3s", marginRight: "8px" }}
+
+                                                onClick={() => navigate(`/product/${p.slug}`)}
+
+                                            >More Details</button>
                                             <button className="btn btn-secondary" style={{ transition: "transform 0.3s", transform: "scale(1)" }} >
                                                 <span style={{ marginRight: "5px" }}>🛒</span>Add to Cart
                                             </button>

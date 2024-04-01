@@ -1,0 +1,29 @@
+/* ProductDetails.css */
+
+/* Hover effect on product images */
+.product-image:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Style for product title */
+.product-title {
+    font-weight: bold;
+}
+
+/* Hover effect on product cards */
+.custom-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+/* Style for product description */
+.product-description {
+    color: #777;
+}
+
+/* Style for product price */
+.product-price {
+    font-weight: bold;
+}
