@@ -1,0 +1,55 @@
+/* Categories.css */
+
+.categories-container {
+    margin-top: 50px;
+    /* Adjust the margin to move the categories below the header */
+}
+
+.category-link {
+    text-decoration: none;
+}
+
+.category-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+    /* Add background-color transition */
+    background-color: #f9f9f9;
+    /* Light color for the background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    background-color: #e9adbe;
+    /* Change background color on hover */
+}
+
+.category-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center the text horizontally */
+    justify-content: center;
+    /* Center the text vertically */
+    height: 100%;
+    /* Ensure the category card fills the height */
+    padding: 15px;
+}
+
+.category-name {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.25rem;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    /* Use a Google Font for a modern look */
+}
+
+.category-description {
+    margin-top: 0;
+    color: #666;
+    font-family: 'Roboto', sans-serif;
+    /* Use a Google Font for a modern look */
+}
