@@ -5,8 +5,8 @@ const { Schema, model } = mongoose;
 const categorySchema = new Schema({
     name: {
         type: String,
-        required: true,
-        unique: true,
+        // required: true,
+        // unique: true,
     },
     slug: {
         type: String,

@@ -168,3 +168,14 @@
 .btn-secondary:hover span {
   transform: translateX(-3px);
 }
+
+.cart-card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.cart-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #d6dede;
+  /* Change to the desired color */
+}
