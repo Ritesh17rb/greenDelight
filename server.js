@@ -8,12 +8,16 @@ import categoryRoutes from "./routes/categoryRoutes.js"
 import productRoutes from "./routes/productRoutes.js"
 import cors from 'cors';
 import path from 'path'
+import { fileURLToPath } from 'url';
 
 // Configure env
 dotenv.config()
 
 // database config
 connectDB();
+
+// Esmodule
+const __filename = fileURLToPath(import.meta.url)
 
 
 // Rest object
@@ -35,8 +39,6 @@ app.use(express.static(path.join(__dirname, './client/build')))
 app.use('*', function (req, res) {
 
     res.sendFile(path.join(__dirname, './client/build/index.html'))
-
-
 
 })
 // PORT
