@@ -47,7 +47,7 @@ const Orders = () => {
                                     {Array.isArray(orders) && orders.map((o, i) => (
                                         <tr key={i}>
                                             <th>{i + 1}</th>
-                                            <td>{o?.status?.name}</td>
+                                            <td>{o?.status}</td>
                                             <td>{o?.buyer?.name}</td>
                                             <td>{moment(o?.createAt).fromNow()}</td>
                                             <td>{o?.payment.success ? "Success" : "Failed"}</td>
@@ -89,7 +89,7 @@ const Orders = () => {
                             ))}
 
 
-                            {/* <------ . . . .  ..  . . . .  -------> */}
+                            {/* <------ . . . .  ..  . . . .-------> */}
                         </div>
                     </div>
                 </div>
